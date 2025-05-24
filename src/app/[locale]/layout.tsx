@@ -17,6 +17,11 @@ const roboto = Roboto_Mono({
   weight: ["400", "700"],
 });
 
+// Required for Static Rendering
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export default function LocaleLayout({
   children,
   params,
